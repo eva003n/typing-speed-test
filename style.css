@@ -96,6 +96,13 @@ ul {
   color: var(--neutral-400);
   flex-direction: column;
 }
+.unit-value,
+.accuracy,
+.time {
+  flex-direction: column;
+  
+
+}
 
 .unit-value > span,
 .accuracy > span,
@@ -171,6 +178,7 @@ ul {
   right: 0;
   left: 0;
   border-radius: 10px;
+  flex-direction: column;
 }
 
 .select-dropdown > * {
@@ -186,6 +194,8 @@ ul {
   bottom: -10px;
   background: var(--neutral-500);
 }
+
+
 /* custom radio input */
 .form-control {
   --gap: 0.5em;
@@ -241,9 +251,39 @@ input[type="radio"]:checked::before {
   justify-content: space-between;
 
   }
-  .header-bottom .header-left {
+  .header-bottom .header-left > * > span {
+    color: var(--neutral-0);
 
   }
+
+  .header-bottom .header-right  {
+    flex-grow: 1;
+    /* margin-left:  30%; */
+  }
+  .header-bottom .header-right .difficulty {
+    flex-grow: 1;
+    justify-content: flex-end;
+
+  }
+  .header-bottom .header-right .mode {
+    /* flex-grow: 1;
+     */
+    /* justify-content: flex-end; */
+    margin-right: auto;
+
+  }
+
+  .unit-value, .accuracy, .time {
+  flex-direction: row;
+  justify-items: center;
+
+  }
+
+  .difficulty, .mode {
+  display: flex;
+  gap: 1rem;
+  
+}
   .difficulty-txt,
   .mode-txt,
   .personal-txt {
@@ -253,4 +293,43 @@ input[type="radio"]:checked::before {
   .header-bottom .header-left > *:not(:last-child) {
     border-right: none;
   }
+  .select-dropdown {
+    flex-direction: row;
+    position: static;
+    background: initial;
+    padding: initial;
+    gap: 4rem;
+  }
+
+  .select-dropdown li:nth-child(1)::after,
+.select-dropdown li:not(:last-child)::after {
+  display: none;
+}
+
+  .select-button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* old browsers */
+    clip-path: inset(50%); /* modern browsers */
+    white-space: nowrap;
+    border-width: 0;
+  }
+  input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* old browsers */
+    clip-path: inset(50%); /* modern browsers */
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+
 }
